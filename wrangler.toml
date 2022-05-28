@@ -1,9 +1,9 @@
-name = "awwbot"
+name = "memebot"
 main = "./src/server.js"
-type = "javascript"
 compatibility_date="2022-02-26"
-
+account_id = "8e539c8119fbacd649c0c41cad2830d5"
 workers_dev = true
+node_compat = true
 
 [[rules]]
 type = "ESModule"
