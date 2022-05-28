@@ -1,6 +1,5 @@
-import { AWW_COMMAND, INVITE_COMMAND, MEME_COMMAND } from './commands.js';
+import { INVITE_COMMAND, MEME_COMMAND } from './commands.js';
 import fetch from 'node-fetch';
-
 
 /* eslint-disable no-undef */
 
@@ -41,7 +40,7 @@ async function registerGuildCommands() {
 }
 
 /**
- * Register all commands globally.  .
+ * Register all commands globally.
  */
 async function registerGlobalCommands() {
   const url = `https://discord.com/api/v10/applications/${applicationId}/commands`;
