@@ -1,11 +1,6 @@
-import { AWW_COMMAND, INVITE_COMMAND } from './commands.js';
+import { AWW_COMMAND, INVITE_COMMAND, MEME_COMMAND } from './commands.js';
 import fetch from 'node-fetch';
 
-/**
- * This file is meant to be run from the command line, and is not used by the
- * application server.  It's allowed to use node.js primitives, and only needs
- * to be run once.
- */
 
 /* eslint-disable no-undef */
 
@@ -23,10 +18,8 @@ if (!applicationId) {
 }
 
 /**
- * Register all commands with a specific guild/server. Useful during initial
- * development and testing.
- */
-// eslint-disable-next-line no-unused-vars
+ * Register all commands with a specific guild/server. */
+
 async function registerGuildCommands() {
   if (!testGuildId) {
     throw new Error(
@@ -48,10 +41,8 @@ async function registerGuildCommands() {
 }
 
 /**
- * Register all commands globally.  This can take o(minutes), so wait until
- * you're sure these are the commands you want.
+ * Register all commands globally.  .
  */
-// eslint-disable-next-line no-unused-vars
 async function registerGlobalCommands() {
   const url = `https://discord.com/api/v10/applications/${applicationId}/commands`;
   await registerCommands(url);
@@ -64,7 +55,7 @@ async function registerCommands(url) {
       Authorization: `Bot ${token}`,
     },
     method: 'PUT',
-    body: JSON.stringify([AWW_COMMAND, INVITE_COMMAND]),
+    body: JSON.stringify([AWW_COMMAND, INVITE_COMMAND, MEME_COMMAND]),
   });
 
   if (response.ok) {
